@@ -5,6 +5,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Clinical Medicine Safety Guide</title>
   <link rel="stylesheet" href="style.css">
+  <style>
+    /* Fixes the flexbox issue and forces the counter to the very bottom center */
+    footer {
+      position: absolute;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      text-align: center;
+      z-index: 10;
+    }
+  </style>
 </head>
 <body>
 
@@ -48,6 +59,10 @@
     </div>
 
   </div>
+
+  <footer>
+    <img src="https://hitscounter.dev/YOUR_GITHUB_USERNAME/YOUR_REPOSITORY_NAME" alt="Visits Tracker">
+  </footer>
 
   <script src="script.js"></script>
 </body>
