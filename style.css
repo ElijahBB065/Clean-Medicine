@@ -1,0 +1,257 @@
+/* Core Global Layout Structure */
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  color: #f8fafc;
+  margin: 0;
+  padding: 24px;
+  font-size: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  box-sizing: border-box;
+  overflow: hidden; /* Keeps floating elements contained */
+  position: relative;
+  background-color: #0f172a; /* Clean, professional, premium solid dark navy */
+}
+
+/* Background Decoration Layer */
+.bg-decorations {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 1;
+  pointer-events: none; /* Allows clicks to pass through to the card */
+  user-select: none;
+}
+
+/* Floating Medical Emojis - Made Crisp and Clear */
+.floating-emoji {
+  position: absolute;
+  font-size: 2.8rem; /* Slightly larger for clarity */
+  opacity: 1;        /* 100% clear and sharp */
+  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1); /* Smooth movement transition between screens */
+  animation: floatAround 6s infinite ease-in-out;
+}
+
+/* SCREEN 1 POSITIONING (Welcome) */
+body.bg-welcome .emoji-1 { top: 12%; left: 8%; }
+body.bg-welcome .emoji-2 { top: 18%; right: 10%; }
+body.bg-welcome .emoji-3 { bottom: 12%; left: 12%; }
+body.bg-welcome .emoji-4 { bottom: 20%; right: 8%; }
+body.bg-welcome .emoji-5 { top: 45%; left: 4%; }
+body.bg-welcome .emoji-6 { bottom: 45%; right: 4%; }
+
+/* SCREEN 2 POSITIONING (Selection Dropdown) */
+body.bg-selection .emoji-1 { top: 8%; left: 45%; } /* Moved towards middle-top */
+body.bg-selection .emoji-2 { top: 50%; right: 15%; }
+body.bg-selection .emoji-3 { bottom: 25%; left: 5%; }
+body.bg-selection .emoji-4 { top: 25%; left: 15%; }
+body.bg-selection .emoji-5 { bottom: 8%; right: 45%; }
+body.bg-selection .emoji-6 { bottom: 40%; left: 50%; }
+
+/* SCREEN 3 POSITIONING (Report Dashboard) */
+body.bg-report .emoji-1 { top: 30%; left: 10%; }
+body.bg-report .emoji-2 { top: 10%; right: 35%; }
+body.bg-report .emoji-3 { bottom: 5%; right: 15%; }
+body.bg-report .emoji-4 { bottom: 45%; left: 12%; }
+body.bg-report .emoji-5 { top: 20%; right: 8%; }
+body.bg-report .emoji-6 { bottom: 30%; right: 10%; }
+
+/* Gentle Idle Animation */
+@keyframes floatAround {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-15px) rotate(5deg);
+  }
+}
+
+/* Premium Component Container Cards */
+.card {
+  position: relative;
+  z-index: 2; /* Sits cleanly above the floating background decorations */
+  max-width: 650px;
+  width: 100%;
+  background: #ffffff;
+  color: #0f172a;
+  padding: 48px;
+  border-radius: 24px;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.6);
+  box-sizing: border-box;
+}
+
+.text-center {
+  text-align: center;
+}
+
+/* Elegant Hero Graphic Layouts */
+.hero-graphics {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+.main-pill {
+  font-size: 4.5rem;
+  animation: pulse 3s infinite ease-in-out;
+}
+.sparkle-icon {
+  font-size: 2rem;
+  color: #eab308;
+}
+
+h1 {
+  font-size: 2.8rem;
+  color: #1e40af;
+  margin: 0 0 16px 0;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+}
+
+h2 {
+  font-size: 2.2rem;
+  color: #1e3a8a;
+  margin-top: 0;
+  font-weight: 700;
+}
+
+h3 {
+  margin-top: 0;
+  margin-bottom: 8px;
+  font-size: 1.4rem;
+}
+
+.subtitle, .instruction-text {
+  font-size: 22px;
+  line-height: 1.6;
+  color: #475569;
+  margin-bottom: 32px;
+}
+
+/* Smooth Interactive View Transitions */
+.screen {
+  display: none;
+  opacity: 0;
+  width: 100%;
+  max-width: 650px;
+}
+
+.screen.active {
+  display: block;
+  opacity: 1;
+}
+
+/* Accessible Action Buttons */
+button {
+  font-size: 20px;
+  padding: 16px 32px;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: 700;
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+  color: white;
+  box-shadow: 0 8px 16px rgba(37, 99, 235, 0.3);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 20px rgba(37, 99, 235, 0.4);
+}
+
+.btn-secondary {
+  background-color: #f1f5f9;
+  color: #1e3a8a;
+  font-size: 16px;
+  padding: 10px 20px;
+  margin-bottom: 24px;
+  border: 1px solid #cbd5e1;
+}
+
+.btn-secondary:hover {
+  background-color: #e2e8f0;
+}
+
+/* Accessible Custom Form Selects */
+.select-container {
+  position: relative;
+  width: 100%;
+}
+
+select {
+  width: 100%;
+  padding: 18px;
+  font-size: 22px;
+  font-weight: 600;
+  color: #1e293b;
+  border: 2px solid #3b82f6;
+  border-radius: 12px;
+  background-color: #fff;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  appearance: none;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%232563eb' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 20px center;
+  background-size: 20px;
+  padding-right: 50px;
+}
+
+select:focus {
+  outline: none;
+  border-color: #1d4ed8;
+  box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.15);
+}
+
+/* Structured Report Blocks */
+.report-header h2 {
+  font-size: 2.2rem;
+  color: #0f172a;
+  border-bottom: 4px solid #3b82f6;
+  padding-bottom: 12px;
+  margin-bottom: 24px;
+}
+
+.report-section {
+  padding: 20px;
+  border-radius: 14px;
+  margin-bottom: 18px;
+  line-height: 1.5;
+}
+
+.alert-allergens {
+  background-color: #fef2f2;
+  border-left: 8px solid #ef4444;
+  color: #991b1b;
+}
+
+.alert-food {
+  background-color: #f0fdf4;
+  border-left: 8px solid #22c55e;
+  color: #166534;
+}
+
+.alert-history {
+  background-color: #fffbeb;
+  border-left: 8px solid #f59e0b;
+  color: #92400e;
+}
+
+/* Subtle Micro-Animations */
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
